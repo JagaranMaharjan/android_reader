@@ -7,25 +7,50 @@
     android:layout_height="203dp"
     tools:layout_gravity="bottom">
 
-    <ImageButton
-        android:id="@+id/view_config_ib_day_mode"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintEnd_toStartOf="@+id/view_config_ib_night_mode"
+    <!-- Row with Theme text and Switch -->
+    <TextView
+        android:id="@+id/theme_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Theme"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/icon_sun_sel"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="10.dp"/>
 
-    <ImageButton
-        android:id="@+id/view_config_ib_night_mode"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
+    <Switch
+        android:id="@+id/theme_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view_config_ib_day_mode"
-        app:srcCompat="@drawable/icon_moon_sel"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="10.dp"/>
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/view_config_ib_day_mode"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/view_config_ib_night_mode"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:srcCompat="@drawable/icon_sun_sel"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/view_config_ib_night_mode"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/view_config_ib_day_mode"-->
+<!--        app:srcCompat="@drawable/icon_moon_sel"-->
+<!--        tools:ignore="MissingConstraints" />-->
 
     <View
         android:id="@+id/view3"
@@ -34,7 +59,7 @@
         android:background="@color/grey_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_config_ib_night_mode" />
+        app:layout_constraintTop_toBottomOf="@+id/theme_switch" />
 
 <!--    <Spinner-->
 <!--        android:id="@+id/view_config_font_spinner"-->
