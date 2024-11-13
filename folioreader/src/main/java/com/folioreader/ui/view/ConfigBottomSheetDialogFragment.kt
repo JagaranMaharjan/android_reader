@@ -113,6 +113,7 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
             setAudioPlayerBackground()
             AppUtil.saveConfig(activity, config)
             EventBus.getDefault().post(ReloadDataEvent())
+            dialog?.hide()
         }
 
 //        if (isNightMode) {
