@@ -110,12 +110,12 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
     }
 
     private fun inflateView() {
-
-        if (config.allowedDirection != Config.AllowedDirection.VERTICAL_AND_HORIZONTAL) {
-            view5.visibility = View.GONE
-            buttonVertical.visibility = View.GONE
-            buttonHorizontal.visibility = View.GONE
-        }
+//
+//        if (config.allowedDirection != Config.AllowedDirection.VERTICAL_AND_HORIZONTAL) {
+//            view5.visibility = View.GONE
+//            buttonVertical.visibility = View.GONE
+//            buttonHorizontal.visibility = View.GONE
+//        }
 
         view_config_ib_day_mode.setOnClickListener {
             isNightMode = true
@@ -144,29 +144,29 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
             dialog?.hide()
         }
 
-        if (activityCallback.direction == Config.Direction.HORIZONTAL) {
-            buttonHorizontal.isSelected = true
-        } else if (activityCallback.direction == Config.Direction.VERTICAL) {
-            buttonVertical.isSelected = true
-        }
-
-        buttonVertical.setOnClickListener {
-            config = AppUtil.getSavedConfig(context)!!
-            config.direction = Config.Direction.VERTICAL
-            AppUtil.saveConfig(context, config)
-            activityCallback.onDirectionChange(Config.Direction.VERTICAL)
-            buttonHorizontal.isSelected = false
-            buttonVertical.isSelected = true
-        }
-
-        buttonHorizontal.setOnClickListener {
-            config = AppUtil.getSavedConfig(context)!!
-            config.direction = Config.Direction.HORIZONTAL
-            AppUtil.saveConfig(context, config)
-            activityCallback.onDirectionChange(Config.Direction.HORIZONTAL)
-            buttonHorizontal.isSelected = true
-            buttonVertical.isSelected = false
-        }
+//        if (activityCallback.direction == Config.Direction.HORIZONTAL) {
+//            buttonHorizontal.isSelected = true
+//        } else if (activityCallback.direction == Config.Direction.VERTICAL) {
+//            buttonVertical.isSelected = true
+//        }
+//
+//        buttonVertical.setOnClickListener {
+//            config = AppUtil.getSavedConfig(context)!!
+//            config.direction = Config.Direction.VERTICAL
+//            AppUtil.saveConfig(context, config)
+//            activityCallback.onDirectionChange(Config.Direction.VERTICAL)
+//            buttonHorizontal.isSelected = false
+//            buttonVertical.isSelected = true
+//        }
+//
+//        buttonHorizontal.setOnClickListener {
+//            config = AppUtil.getSavedConfig(context)!!
+//            config.direction = Config.Direction.HORIZONTAL
+//            AppUtil.saveConfig(context, config)
+//            activityCallback.onDirectionChange(Config.Direction.HORIZONTAL)
+//            buttonHorizontal.isSelected = true
+//            buttonVertical.isSelected = false
+//        }
     }
 
     private fun configFonts() {
@@ -176,39 +176,39 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
             ContextCompat.getColor(context!!, R.color.grey_color)
         )
 
-        buttonVertical.setTextColor(colorStateList)
-        buttonHorizontal.setTextColor(colorStateList)
-
+//        buttonVertical.setTextColor(colorStateList)
+//        buttonHorizontal.setTextColor(colorStateList)
+//
         val adapter = FontAdapter(config, context!!)
-
-        view_config_font_spinner.adapter = adapter
-
-        view_config_font_spinner.background.setColorFilter(
-            if (config.isNightMode) {
-                R.color.night_default_font_color
-            } else {
-                R.color.day_default_font_color
-            },
-            PorterDuff.Mode.SRC_ATOP
-        )
+//
+//        view_config_font_spinner.adapter = adapter
+//
+//        view_config_font_spinner.background.setColorFilter(
+//            if (config.isNightMode) {
+//                R.color.night_default_font_color
+//            } else {
+//                R.color.day_default_font_color
+//            },
+//            PorterDuff.Mode.SRC_ATOP
+//        )
 
         val fontIndex = adapter.fontKeyList.indexOf(config.font)
-        view_config_font_spinner.setSelection(if (fontIndex < 0) 0 else fontIndex)
-
-        view_config_font_spinner.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-                    selectFont(adapter.fontKeyList[position], true)
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                }
-            }
+//        view_config_font_spinner.setSelection(if (fontIndex < 0) 0 else fontIndex)
+//
+//        view_config_font_spinner.onItemSelectedListener =
+//            object : AdapterView.OnItemSelectedListener {
+//                override fun onItemSelected(
+//                    parent: AdapterView<*>?,
+//                    view: View?,
+//                    position: Int,
+//                    id: Long
+//                ) {
+//                    selectFont(adapter.fontKeyList[position], true)
+//                }
+//
+//                override fun onNothingSelected(parent: AdapterView<*>?) {
+//                }
+//            }
     }
 
     private fun selectFont(selectedFont: String, isReloadNeeded: Boolean) {

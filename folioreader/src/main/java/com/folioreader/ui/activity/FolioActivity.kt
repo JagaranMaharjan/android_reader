@@ -329,8 +329,14 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         val config = AppUtil.getSavedConfig(applicationContext)!!
 
         val drawable = ContextCompat.getDrawable(this, R.drawable.ic_drawer)
+        val backButton = ContextCompat.getDrawable(this, R.drawable.abc_vector_test)
         UiUtil.setColorIntToDrawable(config.currentThemeColor, drawable!!)
-        toolbar!!.navigationIcon = drawable
+        toolbar!!.navigationIcon = backButton
+//        toolbar!!.navigationIcon = drawable
+
+        toolbar?.setNavigationOnClickListener {
+            finishAffinity()
+        }
 
         if (config.isNightMode) {
             setNightMode()

@@ -36,12 +36,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_config_ib_night_mode" />
 
-    <Spinner
-        android:id="@+id/view_config_font_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
+<!--    <Spinner-->
+<!--        android:id="@+id/view_config_font_spinner"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/view3" />-->
 
     <View
         android:id="@+id/view4"
@@ -50,7 +50,7 @@
         android:background="@color/grey_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_config_font_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <ImageView
         android:id="@+id/view_config_iv_label_font_small"
@@ -95,35 +95,34 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/grey_color"
-        app:layout_constraintBottom_toTopOf="@+id/buttonVertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_config_iv_label_font_small" />
 
-    <com.folioreader.util.StyleableTextView
-        android:id="@+id/buttonVertical"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:text="@string/direction_vertical"
-        android:textSize="17sp"
-        app:folio_font="@string/lato_font"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHorizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view5" />
+<!--    <com.folioreader.util.StyleableTextView-->
+<!--        android:id="@+id/buttonVertical"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/direction_vertical"-->
+<!--        android:textSize="17sp"-->
+<!--        app:folio_font="@string/lato_font"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/buttonHorizontal"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/view5" />-->
 
-    <com.folioreader.util.StyleableTextView
-        android:id="@+id/buttonHorizontal"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:text="@string/direction_horizontal"
-        android:textSize="17sp"
-        app:folio_font="@string/lato_font"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonVertical"
-        app:layout_constraintTop_toBottomOf="@+id/view5" />
+<!--    <com.folioreader.util.StyleableTextView-->
+<!--        android:id="@+id/buttonHorizontal"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/direction_horizontal"-->
+<!--        android:textSize="17sp"-->
+<!--        app:folio_font="@string/lato_font"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/buttonVertical"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/view5" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
