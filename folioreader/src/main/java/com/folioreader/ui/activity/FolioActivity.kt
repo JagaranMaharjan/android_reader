@@ -28,6 +28,7 @@ import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.Rect
 import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -378,7 +379,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         createdMenu?.let { m ->
             UiUtil.setColorIntToDrawable(config.themeColor, m.findItem(R.id.itemBookmark).icon)
 //            UiUtil.setColorIntToDrawable(config.themeColor, m.findItem(R.id.itemSearch).icon)
-            UiUtil.setColorIntToDrawable(config.themeColor, m.findItem(R.id.itemConfig).icon)
+//            UiUtil.setColorIntToDrawable(config.themeColor, m.findItem(R.id.itemConfig).icon)
             UiUtil.setColorIntToDrawable(config.themeColor, m.findItem(R.id.itemDrawer).icon)
 //            UiUtil.setColorIntToDrawable(config.themeColor, m.findItem(R.id.itemTts).icon)
         }
@@ -407,7 +408,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         createdMenu?.let { m ->
             UiUtil.setColorIntToDrawable(config.nightThemeColor, m.findItem(R.id.itemBookmark).icon)
 //            UiUtil.setColorIntToDrawable(config.nightThemeColor, m.findItem(R.id.itemSearch).icon)
-            UiUtil.setColorIntToDrawable(config.nightThemeColor, m.findItem(R.id.itemConfig).icon)
+//            UiUtil.setColorIntToDrawable(config.nightThemeColor, m.findItem(R.id.itemConfig).icon)
             UiUtil.setColorIntToDrawable(config.nightThemeColor, m.findItem(R.id.itemDrawer).icon)
 //            UiUtil.setColorIntToDrawable(config.nightThemeColor, m.findItem(R.id.itemTts).icon)
         }
@@ -429,17 +430,17 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
             val config = AppUtil.getSavedConfig(applicationContext)!!
 
-//            toolbar?.getOverflowIcon()?.setColorFilter(config.currentThemeColor, PorterDuff.Mode.SRC_ATOP);
-//            for (i in 0 until menu.size()) {
-//                val drawable: Drawable = menu.getItem(i).getIcon()
-//                if (drawable != null) {
-//                    drawable.mutate()
-//                    drawable.setColorFilter(
-//                        config.currentThemeColor,
-//                        PorterDuff.Mode.SRC_ATOP
-//                    )
-//                }
-//            }
+            toolbar?.getOverflowIcon()?.setColorFilter(config.currentThemeColor, PorterDuff.Mode.SRC_ATOP);
+            for (i in 0 until menu.size()) {
+                val drawable: Drawable? = menu.getItem(i).getIcon()
+                if (drawable != null) {
+                    drawable.mutate()
+                    drawable.setColorFilter(
+                        config.currentThemeColor,
+                        PorterDuff.Mode.SRC_ATOP
+                    )
+                }
+            }
 
 
             UiUtil.setColorIntToDrawable(
@@ -448,9 +449,9 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 //            UiUtil.setColorIntToDrawable(
 //                config.currentThemeColor, menu.findItem(R.id.itemSearch).icon
 //            )
-            UiUtil.setColorIntToDrawable(
-                config.currentThemeColor, menu.findItem(R.id.itemConfig).icon
-            )
+//            UiUtil.setColorIntToDrawable(
+//                config.currentThemeColor, menu.findItem(R.id.itemConfig).icon
+//            )
             UiUtil.setColorIntToDrawable(
                 config.currentThemeColor, menu.findItem(R.id.itemDrawer).icon
             )
@@ -543,12 +544,12 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 //                return true
 //
 //            }
-            R.id.itemConfig -> {
-                Log.v(LOG_TAG, "-> onOptionsItemSelected -> " + item.title)
-                showConfigBottomSheetDialogFragment()
-                return true
-
-            }
+//            R.id.itemConfig -> {
+//                Log.v(LOG_TAG, "-> onOptionsItemSelected -> " + item.title)
+//                showConfigBottomSheetDialogFragment()
+//                return true
+//
+//            }
 //            R.id.itemTts -> {
 //                Log.v(LOG_TAG, "-> onOptionsItemSelected -> " + item.title)
 //                showMediaController()
